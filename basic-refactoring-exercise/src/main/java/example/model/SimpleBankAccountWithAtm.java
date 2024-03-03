@@ -3,51 +3,29 @@ package example.model;
 public class SimpleBankAccountWithAtm implements BankAccount {
 
     private final double FEE = 1.0;
-    private final AccountHolder holder;
-    private double balance;
+    private final SimpleBankAccount bankAccount;
 
-    public SimpleBankAccountWithAtm(final AccountHolder holder, final double balance) {
-        this.holder = holder;
-        this.balance = balance;
+    public SimpleBankAccountWithAtm(AccountHolder holder, double balance) {
+        bankAccount = new SimpleBankAccount(holder, balance);
     }
 
     @Override
     public AccountHolder getHolder() {
-        return this.holder;
+        return bankAccount.getHolder();
     }
 
     @Override
     public double getBalance() {
-        return this.balance;
+        return bankAccount.getBalance();
     }
 
     @Override
-    public void deposit(final int userID, final double amount) {
-        if (checkAmount(amount) && checkUser(userID) && isDepositAllowed(amount)){
-            this.balance = this.balance + amount - FEE;
-        }
+    public void deposit(int userID, double amount) {
+        bankAccount.deposit(userID, amount - FEE);
     }
 
     @Override
-    public void withdraw(final int userID, final double amount) {
-        if (checkAmount(amount) && checkUser(userID) && isWithdrawAllowed(amount)) {
-            this.balance = this.balance - amount - FEE;
-        }
-    }
-
-    private boolean checkAmount(final double amount) {
-        return  amount > 0;
-    }
-
-    private boolean checkUser(final int id) {
-        return this.holder.getId() == id;
-    }
-
-    private boolean isDepositAllowed(final double amount) {
-        return (this.balance + amount > FEE);
-    }
-
-    private boolean isWithdrawAllowed(final double amount) {
-        return (this.balance > amount + FEE);
+    public void withdraw(int userID, double amount) {
+        bankAccount.withdraw(userID, amount + FEE);
     }
 }

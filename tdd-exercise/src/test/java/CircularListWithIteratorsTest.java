@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import tdd.iterators.BaseCircularListWithIterators;
-import tdd.iterators.CircularListIterators;
+import tdd.iterators.CircularListWithIterators;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CircularListWithIteratorsTest {
 
     private final List<Integer> TEST_LIST = Arrays.asList(1, 2, 3);
-    private CircularListIterators circularList;
+    private CircularListWithIterators circularList;
 
     private void addTestElements() {
         for (Integer element : TEST_LIST) {

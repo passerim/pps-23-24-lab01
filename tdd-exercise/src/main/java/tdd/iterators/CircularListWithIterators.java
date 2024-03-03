@@ -7,7 +7,7 @@ import java.util.Iterator;
  * Example: with a list like {1,2,3}, the first call of next() returns 1, the second call returns 2,
  * the third returns 3, the fourth returns 1, and so on. Call to previous() goes in the other way.
  */
-public interface CircularListIterators {
+public interface CircularListWithIterators {
 
     /**
      * Adds an element to the list, namely, after the last inserted one.

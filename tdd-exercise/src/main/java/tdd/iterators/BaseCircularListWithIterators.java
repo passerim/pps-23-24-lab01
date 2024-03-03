@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.stream.IntStream;
 
-public class BaseCircularListWithIterators implements CircularListIterators {
+public class BaseCircularListWithIterators implements CircularListWithIterators {
 
     private final CircularList circularList;
 

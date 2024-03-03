@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CircularListTest {
 
     private final List<Integer> TEST_LIST = Arrays.asList(1, 2, 3);
-    private CircularList circularList;
+    protected CircularList circularList;
 
     private void addTestElements() {
         for (Integer element : TEST_LIST) {
